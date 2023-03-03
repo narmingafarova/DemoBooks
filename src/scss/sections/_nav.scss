@@ -1,0 +1,52 @@
+nav {
+  border-bottom: 1px solid rgba(129, 129, 129, 0.2);
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        font-family: "Roboto", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: #333;
+        padding: 0 8px;
+        position: relative;
+        &::after {
+          position: absolute;
+          content: "";
+          top: 100%;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: #b58352;
+          transition: 0.3s;
+        }
+      }
+      &:hover {
+        .nav-link {
+          color: #333333b3;
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .navbar-icons {
+    li {
+      .navbar-icon-item {
+        font-size: 17px;
+        display: flex;
+        span {
+          font-size: 13px;
+        }
+      }
+      .login-btn {
+        font-size: 20px;
+      }
+      &:hover {
+        .navbar-icon-item {
+          color: #333333b3;
+        }
+      }
+    }
+  }
+}

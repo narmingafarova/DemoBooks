@@ -1,0 +1,89 @@
+header {
+  background-image: url("https://z9d7c4u6.rocketcdn.me/wp-content/uploads/2018/05/book-slider-s2-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 30px 0;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 70%;
+    height: 100%;
+    top: 0;
+    left: 30%;
+    background-color: #fff;
+    opacity: 0.9;
+  }
+  .header-slider {
+    z-index: 2;
+    img {
+      transition: 0.3s;
+      &:hover {
+        transform: translate(10px, -10px);
+      }
+    }
+  }
+  .header-data {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .header-category {
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+      line-height: 18px;
+      color: #878787;
+    }
+    .header-title {
+      font-family: "Playfair Display", serif;
+      font-size: 60px;
+      line-height: 70px;
+      letter-spacing: 0px;
+      color: #2d2a2a;
+    }
+    .slider-data {
+      max-width: 500px;
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 24px;
+      color: #777;
+    }
+    .header-btns {
+      font-family: "Roboto", sans-serif;
+      .btn-add {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 14px 28px;
+        border-color: transparent;
+        border-radius: 35px;
+        background-color: #5c5658d9;
+        transition: 0.3s;
+        &:hover {
+          background-color: #4f4749;
+        }
+      }
+      .btn-view {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 26px;
+        background-color: transparent;
+        color: #000000cc;
+        border: 2px solid #cccccc;
+        border-radius: 35px;
+        transition: 0.3s;
+        &:hover {
+          border-color: #d6d6d6;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header {
+    .header-slider {
+      display: none;
+    }
+  }
+}

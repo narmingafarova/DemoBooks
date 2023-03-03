@@ -1,0 +1,100 @@
+.modal {
+  .modal-header {
+    .modal-title {
+      font-family: "Playfair Display", serif;
+      font-size: 120%;
+      font-weight: 400;
+      color: #242424;
+    }
+  }
+  .modal-body {
+    label {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      color: #242424;
+      span {
+        color: red;
+        font-size: 16px;
+      }
+    }
+    input {
+      border: 1px solid #0000001a;
+    }
+    .pass-input {
+      border-top-left-radius: 50rem;
+      border-bottom-left-radius: 50rem;
+      border-right: 0;
+    }
+    .eye-btn {
+      border-top-right-radius: 50rem;
+      border-bottom-right-radius: 50rem;
+      border: 1px solid #0000001a;
+    }
+    .submit-btn {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.2;
+      min-height: 42px;
+      background-color: #b58352;
+      padding: 5px 20px;
+    }
+    .form-remember {
+      .lost-pass {
+        font-size: 14px;
+        color: #b58352;
+      }
+    }
+    .login-choices {
+      font-family: "Playfair Display", serif;
+      width: 100%;
+      font-size: 14px;
+      line-height: 1.4;
+      color: #242424;
+      span {
+        margin: 0 20px;
+      }
+      &::before {
+        content: "";
+        width: 33%;
+        border-bottom: 1px solid #0000001b;
+      }
+      &::after {
+        content: "";
+        width: 33%;
+        border-bottom: 1px solid #0000001b;
+      }
+    }
+    .social-icons {
+      a {
+        font-size: 13px;
+        padding: 5px 20px;
+        &:first-child {
+          background-color: #3b5998;
+        }
+        &:last-child {
+          background-color: #4285f4;
+        }
+      }
+      .social {
+        font-size: 20px;
+      }
+    }
+  }
+  .sign {
+    font-family: "Roboto", sans-serif;
+    .account-ques {
+      font-size: 14px;
+      font-weight: 600;
+      color: #242424;
+    }
+    .crt-account {
+      font-size: 13px;
+      color: #333;
+      border-bottom: 2px solid #b58352;
+      transition: 0.3s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

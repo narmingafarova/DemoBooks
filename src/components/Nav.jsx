@@ -10,9 +10,19 @@ const Nav = () => {
     const [eye, setEye] = useState("-slash");
     const [passType, setPassType] = useState("password");
     const [alert, setAlert] = useState("");
-    // const [modalStatus, setModalStatus] = useState("");
 
     const navigate = useNavigate();
+
+    const forgetPass = (e) => {
+        e.preventDefault();
+        let keyword = prompt("Enter your keyword:");
+        let user = userData.find((data) => data.keyword === keyword);
+        if (user) {
+            setEmail(user.email);
+            setPassword(user.password);
+            console.log(user.email, user.password);
+        }
+    }
 
     const checkUser = (e) => {
         if (!email || !password) {
@@ -32,9 +42,10 @@ const Nav = () => {
             }
         }
     }
+    
     return (
         <>
-            <nav className="navbar navbar-expand-lg py-3">
+            <nav className="navbar navbar-expand-lg py-3 position-fixed">
                 <div className="container">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
@@ -85,8 +96,8 @@ const Nav = () => {
                 </div>
             </nav>
 
+            {/* Modal */}
             <div>
-                {/* Modal */}
                 <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content pb-5">
@@ -99,12 +110,12 @@ const Nav = () => {
                                     <p className={`${alert}`}>{message}</p>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label mb-1">Username or email address <span>*</span></label>
-                                        <input type="email" className="form-control rounded-pill" id="exampleInputEmail1" onChange={(e) => setEmail(e.target.value)} />
+                                        <input type="email" value={email} className="form-control email-input rounded-pill" id="exampleInputEmail1" onChange={(e) => setEmail(e.target.value)} />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputPassword1" className="form-label mb-1">Password <span>*</span></label>
                                         <div className="input-group">
-                                            <input type={passType} className="form-control pass-input" id="exampleInputPassword1" aria-describedby="button-addon2" onChange={(e) => setPassword(e.target.value)} />
+                                            <input type={passType} value={password} className="form-control pass-input" id="exampleInputPassword1" aria-describedby="button-addon2" onChange={(e) => setPassword(e.target.value)} />
                                             <button className="btn eye-btn" type="button" id="button-addon2" onClick={() => {
                                                 if (eye === "-slash") {
                                                     setEye("");
@@ -122,14 +133,14 @@ const Nav = () => {
                                             <input type="checkbox" id='rememberInput' className='me-2' />
                                             <label htmlFor="rememberInput">Remember me</label>
                                         </div>
-                                        <a href="/" className='lost-pass text-decoration-none'>Lost your password?</a>
+                                        <a href="/" className='lost-pass' onClick={forgetPass}>Lost your password?</a>
                                     </div>
                                     <p className='login-choices text-uppercase d-flex justify-content-center align-items-center mb-4'>
                                         <span>Or login with</span>
                                     </p>
                                     <div className="social-icons d-flex flex-column">
-                                        <a href='/' className='text-uppercase btn rounded-pill text-light d-flex justify-content-center align-items-center mb-3'><Facebook className='social me-3' /><span>Facebook</span></a>
-                                        <a href='/' className='text-uppercase btn rounded-pill text-light d-flex justify-content-center align-items-center'><Google className='social me-3' />Google</a>
+                                        <a href='/' className='text-uppercase btn rounded-pill text-light d-flex justify-content-center align-items-center mb-3 py-2'><Facebook className='social me-3' /><span>Facebook</span></a>
+                                        <a href='/' className='text-uppercase btn rounded-pill text-light d-flex justify-content-center align-items-center py-2'><Google className='social me-3' />Google</a>
                                     </div>
                                 </form>
                             </div>

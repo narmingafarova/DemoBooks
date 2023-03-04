@@ -12,7 +12,7 @@ const CharacterDetails = () => {
             setCharacters(response.data.results);
         };
         comingData();
-    });
+    },[]);
 
     const { url } = useParams();
 

@@ -19,7 +19,7 @@ const CharachterList = () => {
                 <h1 className="text-center my-4">The Rick and Morty Characters</h1>
                 <div className="d-flex flex-wrap row g-5">
                     {characters.map((item) => (
-                        <div className="col-12 col-sm-6 col-md-3 text-center">
+                        <div className="col-12 col-sm-6 col-md-3 text-center" key={item.id}>
                             <img
                                 src={item.image}
                                 alt="character"
